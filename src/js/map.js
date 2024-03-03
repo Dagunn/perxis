@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `
         ,
         iconLayout: 'default#image',
-        iconImageHref: '../img/icons/pin-white.svg',
+        iconImageHref: 'img/icons/pin-white.svg',
         iconImageSize: [68, 68],
 
       },
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `
         ,
         iconLayout: 'default#image',
-        iconImageHref: '../img/icons/pin-white.svg',
+        iconImageHref: 'img/icons/pin-white.svg',
         iconImageSize: [68, 68],
       },
       {
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </button>
       `,
         iconLayout: 'default#image',
-        iconImageHref: '../img/icons/pin-white.svg',
+        iconImageHref: 'img/icons/pin-white.svg',
         iconImageSize: [68, 68],
       },
       {
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </button>
       `,
         iconLayout: 'default#image',
-        iconImageHref: '../img/icons/pin-white.svg',
+        iconImageHref: 'img/icons/pin-white.svg',
         iconImageSize: [68, 68],
 
       }
@@ -166,12 +166,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (activePlacemark) {
 
-          activePlacemark.options.set('iconImageHref', '../img/icons/pin-white.svg');
+          activePlacemark.options.set('iconImageHref', 'img/icons/pin-white.svg');
         }
 
         activePlacemark = placemark;
 
-        placemark.options.set('iconImageHref', '../img/icons/pin-active.svg');
+        placemark.options.set('iconImageHref', 'img/icons/pin-active.svg');
 
 
         let infoBlock = document.getElementById('info');
