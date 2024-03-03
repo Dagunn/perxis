@@ -1,0 +1,50 @@
+.swiper {
+  overflow: hidden;
+}
+
+.swiper-pagination.pagination-mob {
+  display: block;
+  bottom: 0;
+
+  @include media(xs) {
+    display: none;
+  }
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--white);
+  opacity: 1;
+  margin: 0 26px 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet-active {
+  background: transparent;
+  border: 5px solid var(--pink);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
+}
+
+.swiper-pagination.header__slider-pagination {
+  bottom: 33px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  @include media(xs) {
+    bottom: 60px;
+    left: 200px;
+    right: unset;
+    margin: 0;
+  }
+}

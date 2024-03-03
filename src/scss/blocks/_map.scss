@@ -1,0 +1,94 @@
+#map {
+  width: 100%;
+  min-height: 470px;
+}
+
+.map-info {
+  position: relative;
+  top: 0;
+  transform: translateY(-50%);
+  left: 0;
+  max-width: 400px;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 10;
+  padding: 16px 18px;
+  border-radius: 18px;
+  margin: 0 auto;
+
+  @include media(xs) {
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    margin: 0;
+    padding: 24px;
+    box-shadow: 0px 0px 20px 0px rgba(22, 22, 22, 0.2);
+    border: 1px solid #ccc;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+
+    @include media(xs) {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__address {
+    color: var(--dark);
+    margin-bottom: 12px;
+    font-size: 14px;
+
+    @include media(xs) {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__contacts {
+    gap: 0 36px;
+    max-width: 352px;
+    font-size: 14px;
+
+    @include media(xs) {
+      font-size: 16px;
+    }
+  }
+
+  &__sells,
+  &__service {
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  &__tel {
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  &__work {
+    display: block;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    margin: 20px 0;
+    width: 207px;
+
+    @include media(xs) {
+      margin: 24px auto;
+    }
+  }
+}

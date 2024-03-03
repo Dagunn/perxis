@@ -1,0 +1,121 @@
+.footer {
+  padding: 32px 18px;
+  background-color: #181b1d;
+  color: var(--white);
+
+  @include media(xs) {
+    padding: 76px 84px;
+  }
+
+  &__top {
+    margin-bottom: 37px;
+
+    @include media(sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__top-cont {
+    display: none;
+    justify-content: space-between;
+    margin-bottom: 76px;
+
+    @include media(sm) {
+      display: flex;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__block {
+    &-item {
+      margin-bottom: 8px;
+      transition: color 0.3s;
+    }
+
+    &-link {
+      color: var(--white);
+      transition: color 0.3s;
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--pink);
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    &-name {
+      margin-bottom: 8px;
+      color: var(--grey);
+    }
+
+    &-phone {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--white);
+      display: inline-block;
+      transition: color 0.3s;
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--pink);
+        }
+      }
+    }
+
+    &-social {
+      gap: 0 28px;
+    }
+
+    &-link {
+      color: var(--white);
+      transition: color 0.3s;
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--pink);
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    flex-direction: column;
+    gap: 8px 0;
+
+    @include media(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    &-cont {
+      gap: 8px 0;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include media(sm) {
+        flex-direction: row;
+        align-items: center;
+        gap: 0 100px;
+      }
+    }
+
+    &-copy {
+      color: var(--grey);
+    }
+
+    &-made {
+      color: var(--grey);
+
+      span {
+        color: var(--white);
+      }
+    }
+  }
+}
