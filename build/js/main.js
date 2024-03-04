@@ -1,4 +1,83 @@
-document.addEventListener("DOMContentLoaded",function(){new Swiper(".benefits__slider",{slidesPerView:"auto",speed:800,spaceBetween:34,loop:!1,autoHeight:!0,pagination:{el:".swiper-pagination",clickable:!0}})}),document.addEventListener("DOMContentLoaded",function(){var e=document.querySelector(".burger-menu");const a=document.querySelector(".sidebar");e.addEventListener("click",function(){this.classList.toggle("opened"),a.classList.toggle("opened")});new Swiper(".header__slider",{speed:800,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".header__slider-next",prevEl:".header__slider-prev"}});let n=0;window.addEventListener("scroll",function(){var e=window.pageYOffset||document.documentElement.scrollTop,a=document.querySelector(".header"),s=document.querySelector(".header__slider-pagination");e>n?(a.classList.add("fixed"),s.classList.add("header-fixed")):(a.classList.remove("fixed"),s.classList.remove("header-fixed")),n=e<=0?0:e},!1)}),document.addEventListener("DOMContentLoaded",function(){ymaps.ready(function(){let e=new ymaps.Map("map",{center:[55.755831,37.617673],zoom:10}),a=[{name:"Ховрино",coordinates:[55.869,37.486],description:`
+
+document.addEventListener('DOMContentLoaded', function () {
+  const benefitsSwiper = new Swiper('.benefits__slider', {
+    slidesPerView: 'auto',
+    speed: 800,
+    spaceBetween: 34,
+    loop: false,
+    autoHeight: true,
+
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const burgerMenu = document.querySelector('.burger-menu');
+  const sidebar = document.querySelector('.sidebar');
+
+  burgerMenu.addEventListener('click', function () {
+    this.classList.toggle('opened');
+    sidebar.classList.toggle('opened');
+  });
+
+
+  const headerSlider = new Swiper('.header__slider', {
+    speed: 800,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+
+    navigation: {
+      nextEl: '.header__slider-next',
+      prevEl: '.header__slider-prev',
+    },
+  });
+
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    let header = document.querySelector(".header");
+    let swiperPagination = document.querySelector(".header__slider-pagination");
+
+    if (currentScroll > lastScrollTop) {
+
+      header.classList.add("fixed");
+      swiperPagination.classList.add('header-fixed');
+    } else {
+
+      header.classList.remove("fixed");
+      swiperPagination.classList.remove('header-fixed');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }, false);
+
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  ymaps.ready(init);
+
+  function init() {
+    let myMap = new ymaps.Map('map', {
+      center: [55.755831, 37.617673],
+      zoom: 10
+    });
+
+
+    let markers = [
+      {
+        name: 'Ховрино', coordinates: [55.869, 37.486], description:
+
+          `
           <h3 class="map-info__title">Dealer Company Name</h3>
           <p class="map-info__address">Ховрино, ул. Автодилерская, 23, стр. 1</p>
           <div class="flex align-center map-info__contacts">
@@ -22,7 +101,16 @@ document.addEventListener("DOMContentLoaded",function(){new Swiper(".benefits__s
             <use xlink:href="img/sprite-svg/icons.svg#icon-phone"></use>
           </svg>
         </button>
-        `,iconLayout:"default#image",iconImageHref:"img/icons/pin-white.svg",iconImageSize:[68,68]},{name:"Мытищи",coordinates:[55.911,37.733],description:`
+        `
+        ,
+        iconLayout: 'default#image',
+        iconImageHref: 'img/icons/pin-white.svg',
+        iconImageSize: [68, 68],
+
+      },
+      {
+        name: 'Мытищи', coordinates: [55.911, 37.733], description:
+          `
           <h3 class="map-info__title">Dealer Company Name</h3>
           <p class="map-info__address">Мытищи, ул. Автодилерская, 23, стр. 1</p>
           <div class="flex align-center map-info__contacts">
@@ -46,7 +134,16 @@ document.addEventListener("DOMContentLoaded",function(){new Swiper(".benefits__s
             <use xlink:href="img/sprite-svg/icons.svg#icon-phone"></use>
           </svg>
         </button>
-        `,iconLayout:"default#image",iconImageHref:"img/icons/pin-white.svg",iconImageSize:[68,68]},{name:"Красногорск",coordinates:[55.831178,37.329729],description:`
+        `
+        ,
+        iconLayout: 'default#image',
+        iconImageHref: 'img/icons/pin-white.svg',
+        iconImageSize: [68, 68],
+      },
+      {
+        name: 'Красногорск', coordinates: [55.831178, 37.329729], description:
+
+          `
           <h3 class="map-info__title">Dealer Company Name</h3>
           <p class="map-info__address">Красногорск, ул. Автодилерская, 23, стр. 1</p>
           <div class="flex align-center map-info__contacts">
@@ -70,7 +167,15 @@ document.addEventListener("DOMContentLoaded",function(){new Swiper(".benefits__s
             <use xlink:href="img/sprite-svg/icons.svg#icon-phone"></use>
           </svg>
         </button>
-      `,iconLayout:"default#image",iconImageHref:"img/icons/pin-white.svg",iconImageSize:[68,68]},{name:"Москва",coordinates:[55.755831,37.617673],description:`
+      `,
+        iconLayout: 'default#image',
+        iconImageHref: 'img/icons/pin-white.svg',
+        iconImageSize: [68, 68],
+      },
+      {
+        name: 'Москва', coordinates: [55.755831, 37.617673], description:
+
+          `
         <h3 class="map-info__title">Dealer Company Name</h3>
         <p class="map-info__address">Москва, ул. Автодилерская, 23, стр. 1</p>
         <div class="flex align-center map-info__contacts">
@@ -94,4 +199,71 @@ document.addEventListener("DOMContentLoaded",function(){new Swiper(".benefits__s
           <use xlink:href="img/sprite-svg/icons.svg#icon-phone"></use>
         </svg>
       </button>
-      `,iconLayout:"default#image",iconImageHref:"img/icons/pin-white.svg",iconImageSize:[68,68]}],i=null;a.forEach(function(s){let n=new ymaps.Placemark(s.coordinates,{hintContent:s.name},{iconLayout:s.iconLayout,iconImageHref:s.iconImageHref,iconImageSize:s.iconImageSize,iconImageOffset:s.iconImageOffset});n.events.add("click",function(e){i&&i.options.set("iconImageHref","img/icons/pin-white.svg"),(i=n).options.set("iconImageHref","img/icons/pin-active.svg");var a=document.getElementById("info");a.innerHTML=s.description,a.style.display="block"}),e.geoObjects.add(n)})})}),document.addEventListener("DOMContentLoaded",function(){new Swiper(".stocks__slider",{slidesPerView:"auto",speed:800,spaceBetween:18,loop:!1,breakpoints:{768:{spaceBetween:34}},pagination:{el:".swiper-pagination",clickable:!0}})});
+      `,
+        iconLayout: 'default#image',
+        iconImageHref: 'img/icons/pin-white.svg',
+        iconImageSize: [68, 68],
+
+      }
+    ];
+
+    let activePlacemark = null;
+
+
+    markers.forEach(function (marker) {
+      let placemark = new ymaps.Placemark(
+        marker.coordinates,
+        {
+          hintContent: marker.name,
+        },
+        {
+
+          iconLayout: marker.iconLayout,
+          iconImageHref: marker.iconImageHref,
+          iconImageSize: marker.iconImageSize,
+          iconImageOffset: marker.iconImageOffset
+        }
+      );
+
+
+      placemark.events.add('click', function (e) {
+
+        if (activePlacemark) {
+
+          activePlacemark.options.set('iconImageHref', 'img/icons/pin-white.svg');
+        }
+
+        activePlacemark = placemark;
+
+        placemark.options.set('iconImageHref', 'img/icons/pin-active.svg');
+
+
+        let infoBlock = document.getElementById('info');
+        infoBlock.innerHTML = marker.description;
+        infoBlock.style.display = 'block';
+      });
+
+      myMap.geoObjects.add(placemark);
+    });
+  }
+
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const stocksSwiper = new Swiper('.stocks__slider', {
+    slidesPerView: 'auto',
+    speed: 800,
+    spaceBetween: 18,
+    loop: false,
+
+    breakpoints: {
+      768: {
+        spaceBetween: 34
+      }
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+  });
+});

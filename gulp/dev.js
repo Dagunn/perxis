@@ -87,7 +87,6 @@ gulp.task('js:dev', function () {
     .pipe(notify(notifyPlumber('JS')))
     // .pipe(babel())
     .pipe(concat('main.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('./build/js'))
 
 })

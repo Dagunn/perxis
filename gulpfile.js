@@ -4,7 +4,7 @@ const gulp = require('gulp')
 
 
 require('./gulp/dev.js');
-require('./gulp/docs.js');
+require('./gulp/app.js');
 
 
 
@@ -15,9 +15,9 @@ gulp.task('default', gulp.series(
   gulp.parallel('server:dev', 'watch:dev')
 ));
 
-gulp.task('docs', gulp.series(
-  'clean:docs',
-  gulp.parallel('html:docs', 'sass:docs', 'imgs:docs', 'fonts:docs', 'files:docs', 'js:docs'),
-  gulp.parallel('server:docs')
+gulp.task('app', gulp.series(
+  'clean:app',
+  gulp.parallel('html:app', 'sass:app', 'imgs:app', 'fonts:app', 'files:app', 'js:app'),
+  gulp.parallel('server:app')
 ));
 

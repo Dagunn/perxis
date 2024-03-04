@@ -34,9 +34,9 @@ const changed = require('gulp-changed');
 
 
 
-gulp.task('clean:docs', function (done) {
-  if (fs.existsSync('./docs/')) {
-    return gulp.src('./docs/', { read: false })
+gulp.task('clean:app', function (done) {
+  if (fs.existsSync('./app/')) {
+    return gulp.src('./app/', { read: false })
       .pipe(clean({ force: true }));
   }
   done();
@@ -51,9 +51,9 @@ const notifyPlumber = (title) => {
     }),
   };
 }
-gulp.task('html:docs', function () {
+gulp.task('html:app', function () {
   return gulp.src('./src/*.html')
-    .pipe(changed('./docs/'))
+    .pipe(changed('./app/'))
     .pipe(plumber(notifyPlumber('HTML')))
     .pipe(fileInclude({
       prefix: '@@',
@@ -61,13 +61,13 @@ gulp.task('html:docs', function () {
     }))
     .pipe(webpHTML())
     .pipe(htmlClean())
-    .pipe(gulp.dest('./docs/'))
+    .pipe(gulp.dest('./app/'))
 })
 
-gulp.task('sass:docs', function () {
+gulp.task('sass:app', function () {
   return gulp
     .src('./src/scss/*.scss')
-    .pipe(changed('./docs/css/'))
+    .pipe(changed('./app/css/'))
     .pipe(notify(notifyPlumber('scss')))
     .pipe(source.init())
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 version'] }))
@@ -77,49 +77,49 @@ gulp.task('sass:docs', function () {
     .pipe(csso())
     // .pipe(media())
     .pipe(source.write())
-    .pipe(gulp.dest('./docs/css/'))
+    .pipe(gulp.dest('./app/css/'))
 })
 
-gulp.task('imgs:docs', function () {
+gulp.task('imgs:app', function () {
   return gulp.src('./src/img/**/*')
-    .pipe(changed('./docs/img/'))
+    .pipe(changed('./app/img/'))
     .pipe(webp())
-    .pipe(gulp.dest('./docs/img/'))
+    .pipe(gulp.dest('./app/img/'))
     .pipe(gulp.src('./src/img/**/*'))
-    .pipe(changed('./docs/img/'))
+    .pipe(changed('./app/img/'))
     .pipe(imageMin({ verbose: true }))
-    .pipe(gulp.dest('./docs/img/'))
+    .pipe(gulp.dest('./app/img/'))
 
 })
 
-gulp.task('fonts:docs', function () {
+gulp.task('fonts:app', function () {
   return gulp.src('./src/fonts/**/*')
-    .pipe(changed('./docs/fonts/'))
-    .pipe(gulp.dest('./docs/fonts/'))
+    .pipe(changed('./app/fonts/'))
+    .pipe(gulp.dest('./app/fonts/'))
 })
 
-gulp.task('files:docs', function () {
+gulp.task('files:app', function () {
   return gulp.src('./src/files/**/*')
-    .pipe(changed('./docs/files/'))
-    .pipe(gulp.dest('./docs/files/'))
+    .pipe(changed('./app/files/'))
+    .pipe(gulp.dest('./app/files/'))
 })
 
-gulp.task('js:docs', function () {
+gulp.task('js:app', function () {
   return gulp
     .src('./src/js/*.js')
-    .pipe(changed('./docs/js/'))
+    .pipe(changed('./app/js/'))
     .pipe(notify(notifyPlumber('JS')))
     .pipe(babel())
     .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./docs/js'))
+    .pipe(gulp.dest('./app/js'))
 
 })
 
 
 
-gulp.task('server:docs', function () {
-  return gulp.src('./docs')
+gulp.task('server:app', function () {
+  return gulp.src('./app')
     .pipe(liveServer({
       livereload: true,
       open: true
