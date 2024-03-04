@@ -110,7 +110,7 @@ gulp.task('js:docs', function () {
     .pipe(changed('./docs/js/'))
     .pipe(notify(notifyPlumber('JS')))
     .pipe(babel())
-    .pipe(concat('main.js'))
+    .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./docs/js'))
 

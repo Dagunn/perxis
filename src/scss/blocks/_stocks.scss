@@ -25,6 +25,7 @@
       padding-bottom: 15px;
       border: 2px solid var(--white);
       transition: color 0.3s, background-color 0.3s, border-color, 0.3s;
+      height: auto;
 
       &:first-child {
         margin-left: 10px;
