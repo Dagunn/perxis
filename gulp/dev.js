@@ -13,6 +13,9 @@ const webpack = require('webpack-stream');
 const changed = require('gulp-changed');
 const babel = require('gulp-babel');
 const imageMin = require('gulp-imagemin');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+
 
 
 
@@ -80,10 +83,11 @@ gulp.task('files:dev', function () {
 gulp.task('js:dev', function () {
   return gulp
     .src('./src/js/*.js')
-    .pipe(changed('./build/js'))
+    .pipe(changed('./dev/js/'))
     .pipe(notify(notifyPlumber('JS')))
     // .pipe(babel())
-    .pipe(webpack(require('./../webpack.config.js')))
+    .pipe(concat('main.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('./build/js'))
 
 })

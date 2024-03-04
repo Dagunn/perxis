@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",(function(){new Swiper(".stocks__slider",{slidesPerView:"auto",speed:800,spaceBetween:18,loop:!1,breakpoints:{768:{spaceBetween:34}},pagination:{el:".swiper-pagination",clickable:!0}})}));
